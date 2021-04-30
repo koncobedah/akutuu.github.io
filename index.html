@@ -4,11 +4,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Aku ituu</title>
-	<link rel="stylesheet" type="text/css" href="assets/blink.css">
+  <link rel="stylesheet" type="text/css" href="assets/blink.css">
+	<link rel="stylesheet" type="text/css" href="assets/zoom.css">
 	<link rel="stylesheet" type="text/css" href="assets/bounce.css">
 	<link rel="stylesheet" type="text/css" href="assets/text-gradient.css">
 	<link rel="stylesheet" type="text/css" href="assets/tombol.css">
 	<link rel="stylesheet" type="text/css" href="assets/body.css">
+  <script type="text/javascript">
+  </script>
 </head>
 
 <body>
@@ -21,31 +24,64 @@
 
 
 <div id="demo" style="display: none;" align="center">
-<h1 class="ml11 gradient-text" align="center">
-  <span class="text-wrapper">
-    <span class="line line1"></span>
-    <span class="letters"  style="display: none;" id="man">Manusia Serigalaa</span>
-  </span>
-</h1>
-	<img width="50%" class="bounce-4" src="assets/foto1.jpg"/>
+<div class="cardcontainer">
+  <h1 class="gradient-text" align="center">
+    Manusia Serigalaa
+  </h1>
+
 </div>
+<!-- <div class="cardcontainer"><img width="50%" src="assets/foto.png"/></div> -->
+
+</div>
+<div class="cardcontainer center" align="center">
+  <p id="gambar"></p>
+</div>
+
+<audio id="myAudio" controls style="display: none">
+  <source  src="assets/panik.mp3" type="audio/mpeg">
+</audio>
+
 <div align="center" style="padding-top: 50px;">
 	<button id="hapus" class="button" onclick="myFunction()">Klik me!</button>
 	<button style="display: none" class="button1" id="tampil" onclick="myss()">Close!</button>
 </div>
+<p align="center" style="color: grey;font-size: 10px">Created : <a href="https://www.instagram.com/hd.yxt/"> Kobedev </a> | 2021</p>
 
 <script>
 function myFunction() {
+  var myImage = new Image(250, 300);
+  myImage.src = 'assets/foto.png';
+  m = document.getElementById("gambar");
+  m.appendChild(myImage); 
+
+
+   var x = document.getElementById("myAudio"); 
+  x.play(); 
+  x.loop = true;
+  x.volume = 0.2;
   document.getElementById('demo').style.display='block';
   document.getElementById('hapus').style.display='none';
-document.getElementById('tulis').style.display='none';
+  document.getElementById('tulis').style.display='none';
   document.getElementById('tampil').style.display='block';
-document.getElementById('man').style.display='block';
+  document.getElementById('man').style.display='block';
+  
+
+
 }
+
 </script>
 
 <script>
 function myss() {
+  var myImage = new Image(300, 300);
+  myImage.src = 'assets/foto.png';
+  m = document.getElementById("gambar");
+    m.style.display='none';
+  m.appendChild(myImage); 
+
+   var x = document.getElementById("myAudio");
+    x.loop = false; 
+  //x.loop = false;
   document.getElementById('demo').style.display='none';
   document.getElementById('hapus').style.display='block';
   document.getElementById('tampil').style.display='none';
